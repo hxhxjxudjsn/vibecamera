@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #2dd4bf; /* teal-400 */
+    --color-bg-dark: #1c1917; /* stone-900 */
+    --color-bg-light: #fafaf9; /* stone-50 */
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg-light);
+    color: #44403c; /* stone-700 */
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* 更加细腻的相机蒙皮质感 */
+  .camera-leather {
+    background-color: #1c1917; /* Stone 900 - 稍微提亮一点点，不要纯黑 */
+    /* 简单的噪点纹理 */
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 3px 3px;
+    background-position: 0 0, 1.5px 1.5px;
+  }
+
+  /* 增强立体感 */
+  .camera-shadow {
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.6), /* 深邃的投影 */
+      0 0 0 1px rgba(25, 25, 25, 1), /* 黑色描边 */
+      inset 0 1px 0 rgba(255,255,255,0.1), /* 顶部微弱高光 */
+      inset 0 0 40px rgba(0,0,0,0.5); /* 内部暗角 */
+  }
+
+
+  /* 镜头光晕效果 */
+  .lens-flare {
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  /* 专业的滑块样式 */
+  .range-slider {
+    -webkit-appearance: none;
+    background: transparent;
+  }
+  
+  .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #2dd4bf;
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  
+  .range-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: #e7e5e4;
+    border-radius: 2px;
+  }
+}
+
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
